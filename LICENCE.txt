@@ -1,0 +1,45 @@
+BASSBED - FREEWARE LICENCE
+
+Copyright (c) 2026 Teddish. All rights reserved.
+
+1. What you may do
+   Bassbed ("the software": the audio plug-in in the VST® 3 (VST3) and Audio Unit formats, with
+   its updates and accompanying files) is free. You may install and use it on any number of your own
+   computers, for personal and commercial music production. Audio you create with it is yours. By
+   installing or using the software you accept this licence.
+
+2. What you may not do
+   a) sell, rent, lend or sublicense the software;
+   b) pass on copies; link to the official download page instead: https://github.com/Teddish/Bassbed/releases;
+   c) modify, decompile, disassemble or reverse engineer it, except where the law allows this and
+      cannot be excluded (in particular sections 69d and 69e of the German Copyright Act, UrhG);
+   d) remove or change copyright notices, this licence or the third-party notices.
+
+3. Third-party software
+   The software contains third-party components (libraries, SDKs and fonts) under their own
+   licences, listed with their licence texts in THIRD_PARTY_NOTICES.txt. Those licences apply to
+   these components and take precedence over this licence where they grant you more rights.
+
+4. No warranty, limited liability
+   The software is experimental and is given away free of charge, "as is". The author does not
+   warrant that it is free of errors, that it works with every host or computer, or that it suits a
+   particular purpose. Make backups of your projects. The author is liable without limitation for
+   intent and gross negligence, for injury to life, body or health, for defects concealed
+   fraudulently, and under the German Product Liability Act; otherwise the author is not liable
+   (sections 521 and 524 of the German Civil Code, BGB, for a free gift). Statutory rights that
+   cannot be excluded remain unaffected.
+
+5. Support and contact
+   There is no right to support, updates or continued availability. Questions, feature requests and
+   bug reports are welcome in the issue tracker: https://github.com/Teddish/Bassbed/issues.
+
+6. End of the licence, governing law
+   The licence ends automatically if you breach it; you must then delete all copies of the
+   software. German law applies, excluding the UN Convention on Contracts for the International
+   Sale of Goods. If you are a consumer, the mandatory consumer law of the country where you live
+   still protects you. If a provision is invalid, the rest remains valid.
+
+7. Trademarks
+   VST is a registered trademark of Steinberg Media Technologies GmbH.
+   Audio Unit and macOS are trademarks of their owner. Bassbed is not affiliated with or endorsed
+   by the owners of these trademarks.
