@@ -18,9 +18,9 @@ Bassbed comes as a VST3 plug-in for macOS, Windows and Linux, and on the Mac als
 
 | System | Needs | Copy to |
 |---|---|---|
-| **macOS** | macOS 11 or later, Apple Silicon or Intel | `Bassbed.vst3` into `~/Library/Audio/Plug-Ins/VST3/` and `Bassbed.component` into `~/Library/Audio/Plug-Ins/Components/` (for you only), or into the same folders under `/Library/Audio/Plug-Ins/` (for every user of the Mac) |
+| **macOS** | built for macOS 11 or later, Apple Silicon and Intel; tried only on Apple Silicon with macOS 26 | `Bassbed.vst3` into `~/Library/Audio/Plug-Ins/VST3/` and `Bassbed.component` into `~/Library/Audio/Plug-Ins/Components/` (for you only), or into the same folders under `/Library/Audio/Plug-Ins/` (for every user of the Mac) |
 | **Windows** | Windows 10 or later, 64 bit | `Bassbed.vst3` into `C:\Program Files\Common Files\VST3\` |
-| **Linux** | x86_64, a distribution at least as recent as Ubuntu 24.04 | `Bassbed.vst3` into `~/.vst3/` (for you only) or `/usr/local/lib/vst3/` (for every user) |
+| **Linux** | x86_64, glibc 2.38 or newer and the C++ library of GCC 13 or newer (for example Ubuntu 24.04, Fedora 39; Debian 12 is too old) | `Bassbed.vst3` into `~/.vst3/` (for you only) or `/usr/local/lib/vst3/` (for every user) |
 
 **macOS**
 
@@ -36,7 +36,7 @@ A release is signed and notarised, so macOS should open it without asking. If ma
 2. Copy the folder `Bassbed.vst3` into `C:\Program Files\Common Files\VST3\` and confirm the question about administrator rights.
 3. Restart the host or let it rescan its plug-ins.
 
-The Windows build is **not code-signed**. Windows may therefore show a warning about an unknown publisher ("Windows protected your PC") when you unpack or first load it; choose *More info* and then **Run anyway**. If the host does not find the plug-in afterwards, right-click the downloaded ZIP, open *Properties*, tick **Unblock** and unpack it again. This build has not been tried in a host on a real Windows machine yet, so I cannot say which of these messages actually appears.
+The Windows build needs no separate runtime from Microsoft. It is **not code-signed**. Windows may therefore show a warning about an unknown publisher ("Windows protected your PC") when you unpack or first load it; choose *More info* and then **Run anyway**. If the host does not find the plug-in afterwards, right-click the downloaded ZIP, open *Properties*, tick **Unblock** and unpack it again. This build has not been tried in a host on a real Windows machine yet, so I cannot say which of these messages actually appears.
 
 **Linux**
 
@@ -44,7 +44,7 @@ The Windows build is **not code-signed**. Windows may therefore show a warning a
 2. `mkdir -p ~/.vst3 && cp -r Bassbed.vst3 ~/.vst3/`
 3. Restart the host or let it rescan its plug-ins.
 
-The build is made on Ubuntu 24.04 and needs system libraries at least that recent, plus the X11, FreeType, Fontconfig, ALSA and OpenGL libraries a desktop system brings along. It has not been tried in a host on Linux yet.
+The build is made on Ubuntu 24.04. Measured on the file itself, it needs glibc 2.38 and libstdc++ from GCC 13 or newer, and these libraries: libX11, libXext, libXrandr, libXinerama, libXcursor, libXi, libXss, libfreetype and libfontconfig. A desktop system has most of them; libXss (package `libxss1` on Debian and Ubuntu, `libXScrnSaver` on Fedora) is sometimes missing. It has not been tried in a host on Linux yet.
 
 **In the host.** The plug-in appears under the manufacturer **Teddish**. In Ableton Live, the only host tested so far, switch on the VST3 system folders (and Audio Units on the Mac) under *Settings → Plug-Ins* and rescan.
 
@@ -78,7 +78,7 @@ The host compensates reported latency in the mix, but not while you play or reco
 
 > **Experimental, no warranty.** Test it yourself before using it in important projects, and back up your sessions.
 
-- **Tested in one host only.** So far I have used Bassbed only on a Mac, in Ableton Live 12 Suite. The Windows and Linux builds pass the same automated checks as the Mac build, but nobody has tried them in a real session yet. If you do, please tell me how it went.
+- **Tested in one host only.** So far I have used Bassbed only on an Apple Silicon Mac, in Ableton Live 12 Suite. The Windows and Linux builds, and the Intel half of the Mac build, pass the same automated checks, but nobody has tried them in a real session yet. If you do, please tell me how it went.
 - **Known issue: do not use SYNC in Live for now.** In Live there is a delay in Sync mode, so the duck does not sit on the kick. Trigger by **MIDI** or **AUDIO** until this is solved. I have reported it to Ableton; they can reproduce it and are keeping me informed.
 - **The Windows build is not code-signed**, see *Installing*. The macOS build is signed and notarised; if macOS still complains, please open an issue.
 - **How it was made.** I took care to research the technical approaches properly, but the plugin was built with the help of Claude Code, an AI coding tool. To keep that honest: every function is covered by automated tests with known target values, and every release is checked on macOS, Windows and Linux with [pluginval](https://github.com/Tracktion/pluginval) at strictness 10 and with the validator from the VST3 SDK.
