@@ -29,17 +29,24 @@ Copyright (c) 2026 Teddish. All rights reserved.
    (sections 521 and 524 of the German Civil Code, BGB, for a free gift). Statutory rights that
    cannot be excluded remain unaffected.
 
-5. Support and contact
+5. Internet access
+   The software never connects to the internet by itself. Only when you click "Check for updates" in
+   its About window does it send one request to github.com, asking for the number of the newest
+   release. The request names the software, not you or your computer; like every request on the
+   internet it reaches that server from your IP address. The author receives and stores nothing.
+   The Linux version does not connect at all.
+
+6. Support and contact
    There is no right to support, updates or continued availability. Questions, feature requests and
    bug reports are welcome in the issue tracker: https://github.com/Teddish/Bassbed/issues.
 
-6. End of the licence, governing law
+7. End of the licence, governing law
    The licence ends automatically if you breach it; you must then delete all copies of the
    software. German law applies, excluding the UN Convention on Contracts for the International
    Sale of Goods. If you are a consumer, the mandatory consumer law of the country where you live
    still protects you. If a provision is invalid, the rest remains valid.
 
-7. Trademarks
+8. Trademarks
    VST is a registered trademark of Steinberg Media Technologies GmbH.
    Audio Unit and macOS are trademarks of their owner. Bassbed is not affiliated with or endorsed
    by the owners of these trademarks.
